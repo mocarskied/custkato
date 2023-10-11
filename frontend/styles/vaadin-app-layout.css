@@ -1,0 +1,76 @@
+:host([primary-section='drawer']:not([overlay])) [part='drawer'] {
+  background-color: lightgray;
+  background-image: linear-gradient(0deg, rgba(0, 5, 30, 0.5), rgba(0, 5, 30, 0.75)), url('../assets/katowice.jpg');
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+[part="drawer"] {
+  width: 25em;
+}
+
+[part="navbar"] {
+  filter: var(--drop-shadow-big);
+  max-width: var(--content-width);
+  padding: 2em 3em 2em 3em;
+  margin-bottom: 4em;
+  box-sizing: border-box;
+  border-color: var(--color-primary-border);
+  background-color: var(--color-base);
+  justify-content: space-around;
+}
+
+[content] {
+  max-width: var(--content-width);
+  padding: 0 3em;
+  box-sizing: border-box;
+}
+
+:host([size~="large"]) [content] {
+  padding: 0 1em;
+  max-width: 70%;
+  margin: 0 auto;
+}
+:host([size~="large"]) [part="navbar"] {
+  max-width: 100%;
+  justify-content: center;
+  padding: 0.25em 0.25em;
+}
+:host([size~="large"]) :host .primary-navigation {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1600px) {
+  [part="drawer"] {
+    max-width: 20%;
+  }
+}
+@media (max-width: 1400px) {
+  [part="drawer"] {
+    max-width: 10%;
+  }
+}
+
+@media (max-width: 1200px) {
+  :host {
+      --vaadin-app-layout-drawer-overlay: true;
+  }
+  [content] {
+    padding: 0 4em;
+    max-width: 100% !important;
+  }
+  [part="navbar"] {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+
+@media (max-width: 800px) {
+  [content] {
+    padding: 0 1em;
+  }
+}
+
+
